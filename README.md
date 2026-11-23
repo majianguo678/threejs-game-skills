@@ -4,6 +4,8 @@ Self-contained Codex and Claude Code skills for building playable, polished Thre
 
 The package includes the runtime materials agents need: `SKILL.md` files, references, helper scripts, and a Vite + TypeScript + Three.js scaffold bundled inside the relevant skill folders. Generated games ship with deterministic test hooks, a seeded RNG, and Playwright templates for smoke tests, visual-regression baselines, and bot playtests so agents can verify their own work end to end.
 
+This checkout also includes the playable **Signal Run** sample at [`games/signal-run`](games/signal-run), created with the bundled game director and specialist skills. Its local setup and controls are documented in that folder's README.
+
 One shared pack of nine skills serves Codex and Claude Code. The director preserves your scope and art direction, uses specialist guidance automatically, delegates independent work when the runner supports it, and scales verification to the change. Full games get a complete production pass; a small HUD fix stays a small HUD fix. No particular model or paid API key is required.
 
 Created by [Majid Manzarpour](https://x.com/majidmanzarpour).

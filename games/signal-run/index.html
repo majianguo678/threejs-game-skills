@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#08131d" />
+    <meta name="description" content="A neon-night courier run through a city losing its lights." />
+    <link rel="icon" href="data:," />
+    <title>Signal Run — Night Courier</title>
+  </head>
+  <body>
+    <main id="app" data-state="title">
+      <canvas id="game-canvas" aria-label="Signal Run 3D game view"></canvas>
+
+      <header id="hud" aria-live="polite">
+        <div class="brand-lockup" aria-label="Signal Run">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span class="brand-name">SIGNAL <b>RUN</b></span>
+          <span class="route-label">NIGHT COURIER / 08</span>
+        </div>
+        <div class="readouts">
+          <div class="readout">
+            <span class="readout-label">TIME</span>
+            <strong id="time-value">00:55</strong>
+          </div>
+          <div class="readout distance-readout">
+            <span class="readout-label">DISTANCE</span>
+            <strong id="distance-value">0000</strong>
+            <span class="readout-unit">M</span>
+          </div>
+          <div class="readout shard-readout">
+            <span class="shard-icon" aria-hidden="true">◇</span>
+            <span class="readout-label">SHARDS</span>
+            <strong id="shard-value">00</strong>
+          </div>
+          <div class="readout integrity-readout">
+            <span class="readout-label">HULL</span>
+            <strong id="health-value" aria-label="3 hull points">◆◆◆</strong>
+          </div>
+          <button id="mute-button" class="icon-button" type="button" aria-pressed="false">SOUND ON</button>
+          <button id="pause-button" class="icon-button pause-button" type="button" aria-label="Pause run">Ⅱ</button>
+        </div>
+      </header>
+
+      <div id="status-line" role="status">Route standing by</div>
+      <div id="dash-meter" aria-label="Dash charge">
+        <span>DASH</span>
+        <div class="meter-track"><i id="dash-fill"></i></div>
+        <span class="meter-key">SHIFT</span>
+      </div>
+
+      <section id="overlay" aria-labelledby="overlay-title">
+        <div class="overlay-grid" aria-hidden="true"></div>
+        <div class="overlay-content">
+          <p id="overlay-kicker">NIGHT COURIER // ROUTE 08</p>
+          <h1 id="overlay-title">SIGNAL<br />RUN</h1>
+          <p id="overlay-copy">Thread the light lanes. Outrun the blackout. Bring the relay shards home.</p>
+          <div class="briefing">
+            <div><span class="briefing-key">A / D</span><span>SWITCH LANES</span></div>
+            <div><span class="briefing-key">SPACE</span><span>JUMP BARRIERS</span></div>
+            <div><span class="briefing-key">SHIFT</span><span>PHASE DASH</span></div>
+          </div>
+          <button id="primary-action" type="button">START RUN</button>
+          <p class="objective-note">SURVIVE THE BLACKOUT · 55 SECONDS</p>
+        </div>
+        <div class="overlay-coordinate" aria-hidden="true">CITY GRID 08:04<br />SIGNAL STRENGTH 12%</div>
+      </section>
+
+      <nav id="touch-controls" aria-label="Touch controls">
+        <div class="lane-controls">
+          <button id="left-button" type="button" aria-label="Switch left"><span>‹</span><small>LEFT</small></button>
+          <button id="right-button" type="button" aria-label="Switch right"><span>›</span><small>RIGHT</small></button>
+        </div>
+        <div class="action-controls">
+          <button id="jump-button" type="button" aria-label="Jump"><span>↑</span><small>JUMP</small></button>
+          <button id="dash-button" type="button" aria-label="Dash"><span>✦</span><small>DASH</small></button>
+        </div>
+      </nav>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
